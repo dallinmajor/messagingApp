@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const cluster = require('cluster');
 const numCPUs = require('os').cpus().length;
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,7 +21,16 @@ if (cluster.isMaster) {
   });
 
 } else {
+  
+  mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://dallinmajor:Pin4Dallin@ds059516.mlab.com:59516/recipebook",
+    { useNewUrlParser: true }
+  );
+
   const app = express();
+
+  app.use(bodyParser.json({ useNewUrlParser: true }));
+  app.use(router);
 
   // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../client/build')));
@@ -31,7 +42,7 @@ if (cluster.isMaster) {
   });
 
   // All remaining requests return the React app, so it can handle routing.
-  app.get('*', function(request, response) {
+  app.get('*', function (request, response) {
     response.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
   });
 
