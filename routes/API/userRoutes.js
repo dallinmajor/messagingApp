@@ -9,3 +9,5 @@ router.route('/all')
 
 router.route('/:id')
     .get(UserController.findById)
+
+module.exports = router;
