@@ -1,24 +1,12 @@
 const UserSchema = new Schema ({
     username: {
         type: String,
-        required: true,
-        validate: [
-            function (input) {
-                return input.length >= 6;
-            },
-            "Username should be at least 6 characters long."
-        ]
+        trim: true,
+        required: true
     },
     password: {
         type: String,
-        trim: true,
-        required: "Password is Required",
-        validate: [
-            function (input) {
-                return input.length >= 6;
-            },
-            "Password should be longer."
-        ]
+        trim: true
     },
     date: {
         type: Date,
