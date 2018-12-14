@@ -1,7 +1,7 @@
 export default (state = null, action) => {
     console.log(state);
     switch(action.type) {
-        case 'USER_FOUND':
+        case 'SET_USER':
             return action.payload;
     } 
     return state
