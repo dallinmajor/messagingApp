@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { setUser } from '../actions';
-import { bindActionCreators } from 'redux';
 
-class UserSearch extends Component {
+export default class UserSearch extends Component {
     constructor (props) {
         super(props);
         this.state = { term: '' }
@@ -35,10 +32,3 @@ class UserSearch extends Component {
         )
     }
 }
-
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({ setUser:setUser}, dispatch);
-}
-
-export default connect(mapDispatchToProps)(UserSearch);
