@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setUser } from '../actions';
+import { setUser } from '../store/actions';
 import { bindActionCreators } from 'redux';
 import Display from '../components/display';
 import Search from '../components/search';
