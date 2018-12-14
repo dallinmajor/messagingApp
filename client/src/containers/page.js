@@ -10,7 +10,10 @@ class Page extends Component {
         return (
             <div className='container'>
                 <Search setUser={this.props.setUser}/>
-                <Display display={this.props.user.username}/>
+                {this.props.user ? (
+                    <Display display={this.props.user.username}/>
+                ): null
+                }
             </div>
         )
     }
