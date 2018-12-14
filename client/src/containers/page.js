@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({ setUser: setUser}, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookList);
+export default connect(mapStateToProps, mapDispatchToProps)(Page);
