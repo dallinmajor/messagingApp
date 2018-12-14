@@ -5,7 +5,10 @@ export default {
         return axios.post("/api/user", userData);
     },
     validate: function (username) {
-        return axios.get(`/api/user/${username}`)
+        console.log(username);
+        const res = axios.get(`/api/user/validate/${username}`);
+        console.log(res);
+        return res;
     },
     get: function (id) {
         return axios.get("/api/user/" + id);
@@ -13,7 +16,7 @@ export default {
     update: function (id, updateData) {
         return axios.put("/api/user/" + id, updateData);
     },
-    delete: function (bookData) {
+    delete: function (id) {
         return axios.delete("/api/user/" + id);
     }
 };

@@ -4,15 +4,13 @@ export default class Search extends Component {
     constructor (props) {
         super(props);
         this.state = { search: '' }
-
-        this.onInputChange = this.onInputChange.bind(this);
     }
 
-    onInputChange(e) {
-        this.setState({ term: e.target.value});
+    onInputChange = (e) => {
+        this.setState({ search: e.target.value});
     }
 
-    onFormSubmit(e) {
+    onFormSubmit = (e) => {
         e.preventDefault();
         this.props.setUser(this.state.search)
     }
@@ -23,7 +21,7 @@ export default class Search extends Component {
                 <input
                     placeholder='Search by username'
                     className='form-control'
-                    value={this.state.term}
+                    value={this.state.search}
                     onChange={this.onInputChange}
                 />
                 <span className='input-group-btn'>

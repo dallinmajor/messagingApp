@@ -13,6 +13,13 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(402).json(err));
     },
+    Validate: (req, res) => {
+        console.log(req.params.username);
+        db.User
+            .find({ username: req.params.username})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(402).json(err));
+    },
     create: (req, res) => {
         db.User
             .create(req.body)

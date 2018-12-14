@@ -4,8 +4,6 @@ export default class Display extends Component {
     constructor (props) {
         super(props);
         this.state = { display: '' }
-
-        this.onInputChange = this.onInputChange.bind(this);
     }
 
     componentDidMount() {

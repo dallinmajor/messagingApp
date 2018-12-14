@@ -10,4 +10,7 @@ router.route('/all')
 router.route('/:id')
     .get(UserController.findById)
 
+router.route('/validate/:username')
+    .get(UserController.Validate)
+
 module.exports = router;

@@ -6,10 +6,15 @@ import Display from '../components/display';
 import Search from '../components/search';
 
 class Page extends Component {
+
+    handleSetUser = (username) => {
+        this.props.setUser(username);
+    }
+
     render() {
         return (
             <div className='container'>
-                <Search setUser={this.props.setUser}/>
+                <Search setUser={this.handleSetUser}/>
                 {this.props.user ? (
                     <Display display={this.props.user.username}/>
                 ): null

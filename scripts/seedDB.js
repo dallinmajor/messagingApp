@@ -9,16 +9,16 @@ mongoose.connect(
 
 const userSeed = [
   {
-    username: 'John Snow',
+    username: 'johnsnow',
   },
   {
-    username: 'Peter Parker',
+    username: 'peterparker',
   },
   {
-    username: 'Sasuke Uchiha',
+    username: 'sasukeuchiha',
   },
   {
-    username: 'Saitama',
+    username: 'saitama',
   },
 ];
 
