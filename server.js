@@ -34,10 +34,9 @@ if (cluster.isMaster) {
   app.use(bodyParser.json({ useNewUrlParser: true }));
   app.use(router);
 
-  // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-  // All remaining requests return the React app, so it can handle routing.
+  
   
 
   app.listen(PORT, function () {
