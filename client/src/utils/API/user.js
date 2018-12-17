@@ -5,10 +5,7 @@ export default {
         return axios.post("/api/user", userData);
     },
     validate: function (username) {
-        console.log(username);
-        const res = axios.get(`/api/user/validate/${username}`);
-        console.log(res);
-        return res;
+        return axios.get(`/api/user/validate/${username}`)
     },
     get: function (id) {
         return axios.get("/api/user/" + id);
