@@ -16,9 +16,11 @@ class Page extends Component {
     render() {
         return (
             <div className='container'>
+                <br></br>
                 <Search setUser={this.handleSetUser}/>
+                <br></br>
                 {this.props.user ? (
-                    <Display display={this.props.user.username}/>
+                    <Display display={[this.props.user]}/>
                 ): null
                 }
             </div>
