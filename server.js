@@ -33,7 +33,7 @@ if (cluster.isMaster) {
   app.use(bodyParser.json({ useNewUrlParser: true }));
   app.use(router);
 
-  app.use(express.static(path.resolve(__dirname, '../client/build')));
+  // app.use(express.static(path.resolve(__dirname, '../client/build')));
 
   app.listen(PORT, function () {
     console.error(`Node cluster worker ${process.pid}: listening on port ${PORT}`);
