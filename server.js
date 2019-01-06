@@ -5,7 +5,6 @@ const numCPUs = require('os').cpus().length;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const router = require('./routes');
-const DB = require('./config/key');
 
 const PORT = process.env.PORT || 5000;
 
@@ -25,7 +24,7 @@ if (cluster.isMaster) {
 } else {
   
   mongoose.connect(
-    process.env.MONGODB_URI || DB,
+    process.env.MONGODB_URI || "mongodb://localhost/mern_starter",
     { useNewUrlParser: true }
   );
 
