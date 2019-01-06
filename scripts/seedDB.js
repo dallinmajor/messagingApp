@@ -9,6 +9,9 @@ mongoose.connect(
 
 const userSeed = [
   {
+    username: 'test'
+  },
+  {
     username: 'johnsnow',
   },
   {

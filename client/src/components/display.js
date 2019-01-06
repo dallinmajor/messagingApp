@@ -1,20 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Display extends Component {
-    constructor (props) {
-        super(props);
-        this.state = { display: '' }
-    }
-
-    componentDidMount() {
-        this.setState({ display: this.props.display})
-    }
-    
-    render() { 
-        return (
-            <div>
-                <h1>{this.state.display}</h1>
-            </div>
-        )
-    }
+const Display = ({display}) => {
+    return (
+        <div>
+            <h1>{display}</h1>
+        </div>
+    )
 };
+
+export default Display;

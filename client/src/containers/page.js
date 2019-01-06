@@ -4,11 +4,13 @@ import { setUser } from '../store/actions';
 import { bindActionCreators } from 'redux';
 import Display from '../components/display';
 import Search from '../components/search';
+import API from '../utils/API';
 
 class Page extends Component {
 
     handleSetUser = (username) => {
-        this.props.setUser(username);
+        API.User.validate(username)
+            .then(res => this.props.setUser(res.data[0]));
     }
 
     render() {

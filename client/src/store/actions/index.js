@@ -1,10 +1,7 @@
-import API from '../../utils/API';
-
-export function setUser(username) {
-    const user = API.User.validate(username)
+export function setUser(user) {
     console.log(user);
-    
-    if(username) {
+
+    if(user) {
         return {
             type: 'SET_USER',
             payload: user
@@ -14,5 +11,4 @@ export function setUser(username) {
             type: 'NO_RESULTS'
         }
     }
-    
 }
