@@ -17,11 +17,17 @@ class Page extends Component {
         return (
             <div className='container'>
                 <br></br>
-                <Search setUser={this.handleSetUser}/>
+                <div className="jumbotron jumbotron-fluid">
+                    <div className="container">
+                        <h1 className="display-4">Dallin's MERN stack build kit</h1>
+                        <p className="lead">Have fun and good luck!</p>
+                    </div>
+                </div>
+                <Search setUser={this.handleSetUser} />
                 <br></br>
                 {this.props.user ? (
-                    <Display display={[this.props.user]}/>
-                ): null
+                    <Display display={[this.props.user]} />
+                ) : null
                 }
             </div>
         )
@@ -35,8 +41,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    
-    return bindActionCreators({ setUser: setUser}, dispatch);
+
+    return bindActionCreators({ setUser: setUser }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Page);
