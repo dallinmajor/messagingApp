@@ -24,7 +24,7 @@ if (cluster.isMaster) {
 } else {
   
   mongoose.connect(
-    MONGODB_URI || "mongodb://localhost/mern_starter",
+    process.env.MONGODB_URI || "mongodb://localhost/mern_starter",
     { useNewUrlParser: true }
   );
 
