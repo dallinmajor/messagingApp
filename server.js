@@ -5,7 +5,6 @@ const numCPUs = require('os').cpus().length;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const router = require('./routes');
-const MONGODB_URI = require("./config/keys");
 
 const PORT = process.env.PORT || 5000;
 
