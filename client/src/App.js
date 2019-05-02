@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import Page from './containers/page';
+import React, { useState, useEffect } from 'react';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <Page />
-      </div>
-    );
-  }
-};
+
+export default function App() {
+  const [messages, setMessages] = useState([]);
+
+  return (
+    <div>
+      <h1>Hello World</h1>
+    </div>
+  )
+}
